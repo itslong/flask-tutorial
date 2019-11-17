@@ -1,4 +1,7 @@
+from flask import render_template
+
 from app import app
+
 
 """
 A common pattern with decorators is to use them to register functions as callbacks for certain events. 
@@ -9,7 +12,24 @@ Flask is going to invoke this function and pass the return value of it back to t
 """
 
 @app.route('/')
-@app.route('/index')
+def test():
+    user = {'username': 'Test'}
+    return render_template('index.html', user=user)
 
+@app.route('/index')
 def index():
-    return 'Hello, World'
+    data = [
+        {
+            'user': 'Clark Kent',
+            'body': 'im superman'
+        },
+        {
+            'user': 'Bruce Wayne',
+            'body': 'where my bat signal at'
+        },
+        {
+            'user': 'The Flash',
+            'body': 'bruh, im fast'
+        }
+    ]
+    return render_template('index.html', title='Home', data=data)
