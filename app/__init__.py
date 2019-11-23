@@ -1,4 +1,6 @@
 from flask import Flask
+from config import Config
+
 
 """
 One aspect that may seem confusing at first is that there are two entities named app. 
@@ -8,7 +10,7 @@ The app variable is defined as an instance of class Flask in the __init__.py scr
 which makes it a member of the app package.
 """
 app = Flask(__name__)
-
+app.config.from_object(Config)
 # import down here to prevent circular imports
 # app import is from flask, not the variable
 from app import routes
