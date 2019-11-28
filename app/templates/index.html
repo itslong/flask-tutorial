@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% if user %}
-    <h1>Hello, {{ user.username }}</h1>
-    {% endif %}
+    <h1>Hello, {{ current_user.username }}</h1>
 
-    {% for dat in data %}
+    {% for post in posts %}
         <div>
-            <h2><p>{{ dat.user }}</p></h2>
-            <h3><p>Message: {{ dat.body }}</p></h3>
+            <h2><p>By: {{ post.author }}</p></h2>
+            <h3><p>Message: {{ post.body }}</p></h3>
         </div>
     {% endfor %}
 {% endblock %}

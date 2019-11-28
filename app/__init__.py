@@ -17,6 +17,7 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
+login.login_view = 'login'
 
 # import down here to prevent circular imports
 # app import is from flask, not the variable
