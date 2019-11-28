@@ -1,2 +1,6 @@
 .idea/
 *.pyc
+
+# sqlite db filename
+app.db
+*.sqlite3

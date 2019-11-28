@@ -1,5 +1,7 @@
 from flask import Flask
 from config import Config
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 
 """
@@ -11,6 +13,9 @@ which makes it a member of the app package.
 """
 app = Flask(__name__)
 app.config.from_object(Config)
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
 # import down here to prevent circular imports
 # app import is from flask, not the variable
-from app import routes
+from app import routes, models
