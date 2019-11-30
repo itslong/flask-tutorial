@@ -4,3 +4,6 @@
 # sqlite db filename
 app.db
 *.sqlite3
+
+# ignore logs printed to local
+/logs/
