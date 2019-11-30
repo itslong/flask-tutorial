@@ -21,4 +21,4 @@ login.login_view = 'login'
 
 # import down here to prevent circular imports
 # app import is from flask, not the variable
-from app import routes, models
+from app import routes, models, errors
