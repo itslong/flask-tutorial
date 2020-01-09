@@ -8,11 +8,11 @@ import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 
 """
-One aspect that may seem confusing at first is that there are two entities named app. 
-The app package is defined by the app directory and the __init__.py script, 
-and is referenced in the from app import routes statement. 
-The app variable is defined as an instance of class Flask in the __init__.py script, 
-which makes it a member of the app package.
+One aspect that may seem confusing at first is that there are two entities named flask_tutorial. 
+The flask_tutorial package is defined by the flask_tutorial directory and the __init__.py script, 
+and is referenced in the from flask_tutorial import routes statement. 
+The flask_tutorial variable is defined as an instance of class Flask in the __init__.py script, 
+which makes it a member of the flask_tutorial package.
 """
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -54,5 +54,5 @@ if not app.debug:
     app.logger.info('App startup')
 
 # import down here to prevent circular imports
-# app import is from flask, not the variable
-from app import routes, models, errors
+# flask_tutorial import is from flask, not the variable
+from flask_tutorial import routes, models, errors
