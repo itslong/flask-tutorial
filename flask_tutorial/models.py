@@ -3,7 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from hashlib import md5
 
-from app import db, login
+from flask_tutorial import db, login
 
 
 class User(UserMixin, db.Model):

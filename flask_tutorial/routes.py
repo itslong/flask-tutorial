@@ -3,14 +3,14 @@ from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 from datetime import datetime
 
-from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm
-from app.models import User
+from flask_tutorial import app, db
+from flask_tutorial.forms import LoginForm, RegistrationForm, EditProfileForm
+from flask_tutorial.models import User
 
 
 """
 A common pattern with decorators is to use them to register functions as callbacks for certain events. 
-In this case, the @app.route decorator creates an association between the URL given as an argument and the function. 
+In this case, the @flask_tutorial.route decorator creates an association between the URL given as an argument and the function. 
 In this example there are two decorators, which associate the URLs / and /index to this function. 
 This means that when a web browser requests either of these two URLs, 
 Flask is going to invoke this function and pass the return value of it back to the browser as a response.
