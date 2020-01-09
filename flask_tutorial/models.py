@@ -78,7 +78,7 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return '<Post Title {}>'.format(self.title)
+        return '<Post {}>'.format(self.title)
 
 
 @login.user_loader
