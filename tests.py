@@ -1,8 +1,8 @@
 import unittest
 from datetime import datetime, timedelta
 
-from __init__ import app, db
-from flasktutorial.flask_tutorial.models import User, Post
+from flask_tutorial import app, db
+from flask_tutorial.models import User, Post
 
 
 
